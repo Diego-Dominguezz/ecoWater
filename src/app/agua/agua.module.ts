@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AguaComponent } from './agua.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,8 @@ import { AguaComponent } from './agua.component';
     AguaComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class AguaModule { }
