@@ -5,8 +5,9 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["tsconfig.json"],
-        "createDefaultProgram": true
+        "project": "ecoWater/tsConfig.json",
+        "createDefaultProgram": true,
+        "sourceType": "module"
       },
       "extends": [
         "plugin:@angular-eslint/recommended",

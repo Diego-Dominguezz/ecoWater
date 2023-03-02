@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Iniciar sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="form"  (ngSubmit)="submitForm()">
+    <ion-item lines="full">
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input formControlName="email" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="password" type="password" required></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" [disabled]="this.form.invalid" expand="block">Iniciar sesión</ion-button>
+        <ion-row>
+          <ion-col class="ion-float-left .ion-text-left">
+            <a [routerLink]="['/forgot-pass']" class="small-text">Olvidaste tu contraseña?</a>
+          </ion-col>
+          <ion-col class="ion-float-right ion-text-right">
+            <a [routerLink]="['/register']" class="small-text">registrarse?</a>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+    </ion-row>
+  </form>
+</ion-content>
