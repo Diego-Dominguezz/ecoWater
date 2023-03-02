@@ -1,0 +1,7 @@
+{
+  "name": "Eco Water",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
