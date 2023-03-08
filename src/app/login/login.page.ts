@@ -21,6 +21,7 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+    this.form.valueChanges.subscribe(x=>{console.log(x, this.form.valid)})
   }
   submitForm() {
     this.authService.login(this.form.value);

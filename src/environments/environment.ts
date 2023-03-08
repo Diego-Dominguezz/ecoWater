@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  logged:false,
   firebaseConfig: {
     apiKey: "AIzaSyB-ODZFpeUFgHhKyzdpeBxZTJ7d235N08M",
     authDomain: "silent-bird-339620.firebaseapp.com",
