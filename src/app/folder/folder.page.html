@@ -1,36 +1,28 @@
-<ion-split-pane contentId="main-content">
-  <div>
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
+<ion-menu [disabled]="enableMenu" contentId="main-content" type="overlay">
+  <ion-content>
+    <ion-list id="inbox-list">
+      <ion-list-header>NOMBRE DEL USUARIO?</ion-list-header>
+      <ion-note>Boton a perfil?</ion-note>
 
-          <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
-              routerLinkActive="selected">
-              <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-          <ion-menu-toggle routerLink="login" routerLinkActive="selected">
-            <ion-button expand="full">
-              <ion-label> logout </ion-label>
-            </ion-button>
-          </ion-menu-toggle>
-        </ion-list>
+      <ion-menu-toggle auto-hide="true" *ngFor="let p of appPages; let i = index">
+        <ion-item>
+          <ion-icon aria-hidden="true" slot="start" ios="mail-outline" ios="mail-outline"></ion-icon>
 
-        <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon aria-hidden="true" slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
-  </div>
+        </ion-item>
+        <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+          <ion-icon aria-hidden="true" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+          <ion-label>{{ p.title }}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+      <ion-menu-toggle routerLink="login" routerLinkActive="selected">
+        <ion-button expand="full">
+          <ion-label> logout </ion-label>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
   <ion-header [translucent]="true">
     <ion-toolbar>
       <ion-buttons slot="start">
@@ -45,11 +37,8 @@
         <ion-title size="large">{{ folder }}</ion-title>
       </ion-toolbar>
     </ion-header>
-
     <div id="container">
-      <strong class="capitalize">{{ folder }}</strong>
-      <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI
-          Components</a></p>
+      <ion-router-outlet name="folder"></ion-router-outlet>
     </div>
   </ion-content>
-</ion-split-pane>
+</div>

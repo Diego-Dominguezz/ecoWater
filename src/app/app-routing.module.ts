@@ -12,6 +12,11 @@ const routes: Routes = [
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
   {
+    path: 'agua',
+    loadChildren: () => import('./agua/agua.module').then(m => m.AguaModule),
+    outlet: 'folder'
+  },
+  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
