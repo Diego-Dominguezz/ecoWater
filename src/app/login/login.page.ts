@@ -24,6 +24,12 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
   }
+  forgotNavigate(){
+    console.log('navigate?')
+    this.router.navigate(['forgotPass']).then(x=>{
+      console.log('navigated',x)
+    })
+  }
   submitForm() {
     this.authService.login(this.form.value);
   }
