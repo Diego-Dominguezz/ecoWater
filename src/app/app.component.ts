@@ -26,7 +26,7 @@ export class AppComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.router.navigate(['login']);
     this.router.events.subscribe(x=>{
-      console.log(x)
+      // console.log(x)
     })
     // this.auth.toggleSideMenu();
     // this.router.navigate(['agua']);
