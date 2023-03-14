@@ -23,10 +23,12 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
-    this.router.navigate(['folder','inbox'])
   }
   submitForm() {
     this.authService.login(this.form.value);
+  }
+  ngAfterViewInit(): void {
+    this.authService.sideMenuFnc(false);
   }
 
 }

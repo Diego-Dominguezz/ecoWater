@@ -1,3 +1,27 @@
 <ion-app>
-  <ion-router-outlet id="main-content"></ion-router-outlet>
+  <ion-split-pane contentId="menu-content" when="xs" (ionWillOpen)="openedMenu()" (ionWillClose)="closingMenu()" [disabled]="true"
+    (ionSplitPaneVisible)="onSplitPaneVisible($event)">
+    <ion-menu contentId="menu-content" menuId="menu-content" side="start" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          <div class="wrapper">
+            <ion-img src="../assets/plantPhoto.png">test</ion-img>
+            <ion-label>{{auth.loggedUser?.user?.displayName}}</ion-label>
+          </div>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-col size="6" *ngFor="let temp of templates;" #templateList>
+          <ion-item class="ion-no-padding" lines="none" (click)="clickedMenu(temp)">
+            <ion-button fill="clear" expand="block" color="white">
+              <ion-icon [name]="temp.icon"></ion-icon>
+              <label class="m-1">{{temp.name}}</label>
+              <ion-menu-toggle *ngIf="temp.router === 'login'"></ion-menu-toggle>
+            </ion-button>
+          </ion-item>
+        </ion-col>
+      </ion-content>
+    </ion-menu>
+      <ion-router-outlet id="menu-content"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

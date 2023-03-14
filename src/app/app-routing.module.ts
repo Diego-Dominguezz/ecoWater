@@ -1,20 +1,15 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
     path: 'agua',
     loadChildren: () => import('./agua/agua.module').then(m => m.AguaModule),
-    outlet: 'folder'
+  },
+  {
+    path: 'riego',
+    loadChildren: () => import('./riego/riego.module').then(m => m.RiegoModule),
   },
   {
     path: 'login',
@@ -25,9 +20,14 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
-    path: 'forgot-pass',
+    path: 'forgotPass',
     loadChildren: () => import('./forgot-pass/forgot-pass.module').then( m => m.ForgotPassPageModule)
-  }
+  },
+  {
+    path: '',
+    component: AppComponent,
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
