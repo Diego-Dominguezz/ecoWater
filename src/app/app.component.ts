@@ -24,12 +24,12 @@ export class AppComponent implements AfterViewInit {
     console.log(e);
   }
   ngAfterViewInit(): void {
-    // this.router.navigate(['login']);
+    this.router.navigate(['login']);
     this.router.events.subscribe(x=>{
       // console.log(x)
     })
-    this.auth.toggleSideMenu(true);
-    this.router.navigate(['agua']);
+    // this.auth.toggleSideMenu(true);
+    // this.router.navigate(['agua']);
 
   }
   openedMenu() {
