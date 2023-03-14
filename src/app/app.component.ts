@@ -28,7 +28,7 @@ export class AppComponent implements AfterViewInit {
     this.router.events.subscribe(x=>{
       // console.log(x)
     })
-    // this.auth.toggleSideMenu();
+    // this.auth.toggleSideMenu(true);
     // this.router.navigate(['agua']);
 
   }
