@@ -1,3 +1,4 @@
+import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,11 +11,13 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    IonicModule
   ],
   exports:[
     ReactiveFormsModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    IonicModule
   ]
 })
 export class SharedModule { }

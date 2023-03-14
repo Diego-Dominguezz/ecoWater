@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class LoginPage implements OnInit {
   form: FormGroup;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
     this.form = new FormGroup({
       email: new FormControl('', Validators.required),
@@ -21,10 +23,12 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
-    this.form.valueChanges.subscribe(x=>{console.log(x, this.form.valid)})
   }
   submitForm() {
     this.authService.login(this.form.value);
+  }
+  ngAfterViewInit(): void {
+    this.authService.sideMenuFnc(false);
   }
 
 }

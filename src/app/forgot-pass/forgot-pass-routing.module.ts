@@ -6,7 +6,8 @@ import { ForgotPassPage } from './forgot-pass.page';
 const routes: Routes = [
   {
     path: '',
-    component: ForgotPassPage
+    component: ForgotPassPage,
+    pathMatch:'full'
   }
 ];
 
