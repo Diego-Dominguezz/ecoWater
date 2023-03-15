@@ -117,3 +117,25 @@ ion-note {
 ion-item.selected {
   --color: var(--ion-color-primary);
 }
+ion-menu::part(backdrop) {
+  background-color: rgba(10, 46, 207, 0.5);
+}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+
+  box-shadow: 4px 0px 16px rgba(20, 3, 119, 0.315);
+}
+.wrapper{
+  position: relative;
+}
+.wrapper ion-label{
+  background-color: rgba(78, 78, 78, 0.418);
+  bottom: 75%;
+  color: white;
+  font-family: Roboto;
+  font-size: 1.25em;
+  right: 35%;
+  // padding-right: 0.25em 0.75em;
+  position: absolute;
+}
