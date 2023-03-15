@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  public isLogged: boolean = true;
+  public isLogged: boolean = false;
 
   constructor(
     private fireAuth: AngularFireAuth,

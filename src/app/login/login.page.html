@@ -1,13 +1,16 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Iniciar sesión</ion-title>
+    <ion-title>Bienvenido a ecoWater</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <form [formGroup]="form"  (ngSubmit)="submitForm()">
+
+    <img src="resources/icon.png" width="100" />
+    
     <ion-item lines="full">
       <ion-label position="floating">Correo</ion-label>
       <ion-input formControlName="email" type="text" required></ion-input>
@@ -18,13 +21,13 @@
     </ion-item>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" [disabled]="this.form.invalid" expand="block">Iniciar sesión</ion-button>
+        <ion-button type="submit" color="success" [disabled]="this.form.invalid" expand="block">Iniciar sesión</ion-button>
         <ion-row>
           <ion-col class="ion-float-left .ion-text-left">
-            <a [routerLink]="['/forgot-pass']" class="small-text">Olvidaste tu contraseña?</a>
+            <a [routerLink]="['/forgot-pass']" class="small-text">¿Olvidaste tu contraseña?</a>
           </ion-col>
           <ion-col class="ion-float-right ion-text-right">
-            <a [routerLink]="['/register']" class="small-text">registrarse?</a>
+            <a [routerLink]="['/register']" class="small-text">¿Eres nuevo?</a>
           </ion-col>
         </ion-row>
       </ion-col>
