@@ -7,14 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { PagEcoPageRoutingModule } from './pag-eco-routing.module';
 
 import { PagEcoPage } from './pag-eco.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
-    PagEcoPageRoutingModule
+    PagEcoPageRoutingModule,
+    SharedModule,
   ],
-  declarations: [PagEcoPage]
+  exports:[
+    IonicModule,
+  ],
+  //declarations: [PagEcoPage]
 })
 export class PagEcoPageModule {}
