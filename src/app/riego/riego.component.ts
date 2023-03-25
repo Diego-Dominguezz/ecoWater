@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-riego',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RiegoComponent  implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // this.router.navigate(['riego','eco']);
+  }
 
 }

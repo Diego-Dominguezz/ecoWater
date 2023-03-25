@@ -28,6 +28,10 @@ const routes: Routes = [
     component: AppComponent,
     pathMatch: 'full'
   },
+  {
+    path: 'ecoinicio',
+    loadChildren: () => import('./ecoinicio/ecoinicio.module').then( m => m.EcoinicioPageModule)
+  },
 ];
 
 @NgModule({
