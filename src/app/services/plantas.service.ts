@@ -49,7 +49,7 @@ export class PlantasService {
   }
   getUsers(){
     return this.http.get<any[]>(this.getServer('auth')).subscribe((x)=>{
-      console.log(x)
+      console.log('encontre planta',x)
     })
   }
 

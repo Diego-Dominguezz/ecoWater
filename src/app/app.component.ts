@@ -3,6 +3,7 @@ import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@
 import { Router } from '@angular/router';
 import { AnimationController, IonRouterOutlet, MenuController } from '@ionic/angular';
 import { MenuElement } from './models/menu.model';
+import { PlantasService } from './services/plantas.service';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -16,17 +17,16 @@ export class AppComponent implements AfterViewInit {
     public auth: AuthService,
     private animationCtrl: AnimationController,
     private menuCtrl: MenuController,
+    private plantaService: PlantasService
   ) {
-    console.log('main app');
     // this.routerOutlet.swipeGesture = false;
+    this.plantaService.getUsers();
   }
   onSplitPaneVisible(e: any) {
-    console.log(e);
   }
   ngAfterViewInit(): void {
     // this.router.navigate(['login']);
     this.router.events.subscribe(x=>{
-      // console.log(x)
     })
     this.auth.toggleSideMenu(true);
     this.router.navigate(['agua']);
@@ -36,7 +36,7 @@ export class AppComponent implements AfterViewInit {
     this.initListAnimation();
   }
   clickedMenu(element: MenuElement) {
-    console.log('clicked')
+    console.log('clicked', element)
     if (element.name == 'Cerrar sesión') this.auth.logout();
     this.router.navigate([element.router]).then(()=>{
       this.menuCtrl.close();

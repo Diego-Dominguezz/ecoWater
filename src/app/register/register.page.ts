@@ -22,9 +22,9 @@ export class RegisterPage implements OnInit {
    }
 
   ngOnInit() {
-    this.form.valueChanges.subscribe(x=>{
-      console.log('form vaules', x);
-    })
+    // this.form.valueChanges.subscribe(x=>{
+    //   console.log('form vaules', x);
+    // })
   }
   submitForm(){
     this.auth.register(this.form.value).then((x)=>{

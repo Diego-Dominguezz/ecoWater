@@ -19,7 +19,6 @@ export class ForgotPassPage implements OnInit {
    }
 
   ngOnInit() {
-    console.log('forgot')
   }
   submitForm(){
     this.auth.recoverPass(this.form.value);
