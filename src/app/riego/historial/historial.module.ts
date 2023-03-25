@@ -13,9 +13,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
     HistorialPageRoutingModule,
-    SharedModule
+    IonicModule
   ],
   exports:[
     SharedModule
