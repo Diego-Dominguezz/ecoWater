@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { HistorialPage } from './historial.page';
+import { PagEcoPage } from './pag-eco.page';
 
-describe('HistorialPage', () => {
-  let component: HistorialPage;
-  let fixture: ComponentFixture<HistorialPage>;
+describe('PagEcoPage', () => {
+  let component: PagEcoPage;
+  let fixture: ComponentFixture<PagEcoPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ HistorialPage ],
+      declarations: [ PagEcoPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HistorialPage);
+    fixture = TestBed.createComponent(PagEcoPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

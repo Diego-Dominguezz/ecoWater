@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HistorialPage } from './historial/historial.page';
 import { RiegoComponent } from './riego.component';
+import { HistorialComponent } from './historial/historial.component';
+import { PagEcoPage } from '../pag-eco/pag-eco.page';
+import { PagEcoPageModule } from '../pag-eco/pag-eco.module';
 
 const routes: Routes = [
   {
@@ -10,8 +12,12 @@ const routes: Routes = [
   pathMatch:'full'
   },
   {
-    path:'riego/historial',
-    component: HistorialPage,
+    path:'historial',
+    component: HistorialComponent,
+  },
+  {
+    path: 'eco',
+    loadChildren: () => import('../pag-eco/pag-eco.module').then( m => m.PagEcoPageModule)
   }
 ];
 
