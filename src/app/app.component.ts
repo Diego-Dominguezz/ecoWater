@@ -20,7 +20,7 @@ export class AppComponent implements AfterViewInit {
     private plantaService: PlantasService
   ) {
     // this.routerOutlet.swipeGesture = false;
-    this.plantaService.getUsers();
+    this.plantaService.getPlants().subscribe(x=>{});
   }
   onSplitPaneVisible(e: any) {
   }

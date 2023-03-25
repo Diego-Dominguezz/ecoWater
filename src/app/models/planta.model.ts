@@ -1,5 +1,5 @@
 export interface Plant {
-    id: string;
+    id?: string;
     name: string,
     size: 'small' | 'medium' | 'large',
     waterSchedule: waterSchedule,
