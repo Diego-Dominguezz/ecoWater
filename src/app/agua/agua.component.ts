@@ -14,7 +14,6 @@ export class AguaComponent  implements OnInit {
    }
 
   ngOnInit() {
-    console.log('this is awa')
   }
 
 
