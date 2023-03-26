@@ -25,11 +25,11 @@ export class AppComponent implements AfterViewInit {
   onSplitPaneVisible(e: any) {
   }
   ngAfterViewInit(): void {
-    // this.router.navigate(['login']);
+    this.router.navigate(['login']);
     this.router.events.subscribe(x=>{
     })
-    this.auth.toggleSideMenu(true);
-    this.router.navigate(['agua']);
+    // this.auth.toggleSideMenu(true);
+    // this.router.navigate(['ecoinicio']);
 
   }
   openedMenu() {

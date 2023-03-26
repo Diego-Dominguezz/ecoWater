@@ -31,7 +31,15 @@ const routes: Routes = [
   {
     path: 'ecoinicio',
     loadChildren: () => import('./ecoinicio/ecoinicio.module').then( m => m.EcoinicioPageModule)
+  },  {
+    path: 'carga',
+    loadChildren: () => import('./carga/carga.module').then( m => m.CargaPageModule)
   },
+  {
+    path: 'configecowater',
+    loadChildren: () => import('./configecowater/configecowater.module').then( m => m.ConfigecowaterPageModule)
+  },
+
 ];
 
 @NgModule({
