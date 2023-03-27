@@ -7,9 +7,11 @@
 <ion-content padding class="background" [fullscreen]="true">
   <ion-img src="../assets/logo1.jpg">test1</ion-img>
   <div id="container">
-    <ion-button color="success" routerLink="/ecoinicio">
-      <ion-icon  slot="icon-only" name="home"></ion-icon>
+  <ion-menu-toggle>
+    <ion-button color="success">
+      <ion-icon slot="icon-only" name="home"></ion-icon>
     </ion-button>
+  </ion-menu-toggle>
 
     <ion-item>
       <ion-label>Tiempo de riego:</ion-label>

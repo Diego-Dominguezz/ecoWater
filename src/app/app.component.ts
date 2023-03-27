@@ -11,7 +11,7 @@ import { PlantasService } from './services/plantas.service';
 })
 export class AppComponent implements AfterViewInit {
   @ViewChildren('templateList', { read: ElementRef }) templateListRef: QueryList<ElementRef> | undefined;
-  public templates: MenuElement[] = [{ name: 'Agua', icon: 'leaf-outline', router: 'agua' }, { name: 'Riego', icon: 'water-outline', router: 'riego' }, { name: 'Configuración', icon: 'settings-outline', router: 'config' }, { name: 'Cerrar sesión', icon: 'exit-outline', router: 'login' }]
+  public templates: MenuElement[] = [{ name: 'Agua', icon: 'leaf-outline', router: 'agua' }, { name: 'Riego', icon: 'water-outline', router: 'riego' }, { name: 'Configuración', icon: 'settings-outline', router: 'configecowater' }, { name: 'Cerrar sesión', icon: 'exit-outline', router: 'login' }]
   constructor(
     private router: Router,
     public auth: AuthService,

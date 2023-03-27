@@ -22,7 +22,7 @@ export class AuthService {
   async login(formData: { email: string, password: string }) {
     try {
       const res: UserCredential = await this.fireAuth.signInWithEmailAndPassword(formData.email, formData.password);
-      this.router.navigate(['agua']);
+      this.router.navigate(['ecoinicio']);
       this.sideMenu = true;
       this.menuCtrl.enable(this.sideMenu);
       this.menuCtrl.swipeGesture(this.sideMenu);
@@ -37,7 +37,7 @@ export class AuthService {
   async register(formData: {email: string, name:string, lastName:string, password: string}){
     try {
       const res: UserCredential = await this.fireAuth.createUserWithEmailAndPassword(formData.email, formData.password);
-      this.router.navigate(['agua']);
+      this.router.navigate(['ecoinicio']);
       res.user?.updateProfile({displayName:formData.name+" "+formData.lastName});
       this.loggedUser = res;
       this.sideMenu = true;
