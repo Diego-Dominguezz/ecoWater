@@ -4,6 +4,10 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
+    path: 'ecoinicio',
+    loadChildren: () => import('./ecoinicio/ecoinicio.module').then( m => m.EcoinicioPageModule)
+  },
+  {
     path: 'agua',
     loadChildren: () => import('./agua/agua.module').then(m => m.AguaModule),
   },
@@ -29,9 +33,6 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'ecoinicio',
-    loadChildren: () => import('./ecoinicio/ecoinicio.module').then( m => m.EcoinicioPageModule)
-  },  {
     path: 'carga',
     loadChildren: () => import('./carga/carga.module').then( m => m.CargaPageModule)
   },
