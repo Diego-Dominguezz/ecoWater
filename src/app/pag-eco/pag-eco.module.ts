@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { PagEcoPageRoutingModule } from './pag-eco-routing.module';
 
-import { PagEcoPage } from './pag-eco.page';
+//import { PagEcoPage } from './pag-eco.page';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
