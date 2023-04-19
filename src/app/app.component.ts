@@ -29,7 +29,7 @@ export class AppComponent implements AfterViewInit {
     this.router.events.subscribe(x=>{
     })
     // this.auth.toggleSideMenu(true);
-    // this.router.navigate(['ecoinicio']);
+    // this.router.navigate(['agua']);
 
   }
   openedMenu() {

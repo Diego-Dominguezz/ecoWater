@@ -1,52 +1,36 @@
 <ion-header collapse="condense">
   <ion-toolbar>
     <ion-title color="success" size="large">Es hora de regar.</ion-title>
-    
+
   </ion-toolbar>
 </ion-header>
 <ion-content padding class="background" [fullscreen]="true">
   <ion-img src="../assets/logo1.jpg">test1</ion-img>
   <div id="container">
-  <ion-menu-toggle>
-    <ion-button color="success">
-      <ion-icon slot="icon-only" name="home"></ion-icon>
+    <ion-menu-toggle>
+      <ion-button color="success">
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-menu-toggle>
+    <ion-button color="success" (click)="addPlant()">
+      <ion-icon slot="icon-only" name="add-outline"></ion-icon>
     </ion-button>
-  </ion-menu-toggle>
+    <ion-card *ngFor="let plant of plants | async">
+      <img alt="Silhouette of mountains" src="../assets/plantPhoto.png" />
+      <ion-card-header>
+        <ion-card-title>{{plant.name}}</ion-card-title>
+        <ion-card-subtitle>planta</ion-card-subtitle>
+      </ion-card-header>
 
-    <ion-item>
-      <ion-label>Tiempo de riego:</ion-label>
-      <ion-input placeholder="Enter text"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label position="fixed">Fecha riego</ion-label>
-      <ion-input placeholder="Enter text"></ion-input>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label position="stacked">Hora de riego</ion-label>
-      <ion-input placeholder="Enter text"></ion-input>
-    </ion-item>
-    <!------>
-    <ion-item>
-      <ion-label>Planta</ion-label>
-      
-      <ion-select placeholder="Make a Selection">
-        <ion-select-option value="">Perejil</ion-select-option>
-        <ion-select-option value="nes">Hierbabuena</ion-select-option>
-        <ion-select-option value="n64">Lavanda</ion-select-option>
-        <ion-select-option value="ps">Manzanilla</ion-select-option>
-        <ion-select-option value="genesis">Albahaca</ion-select-option>
-        <ion-select-option value="saturn">Menta</ion-select-option>
-        <ion-select-option value="snes">Palo de agua</ion-select-option>
-      </ion-select>
-    </ion-item>
-    
-    <ion-item>
-      <ion-label>Regar</ion-label>
-      <ion-toggle slot="end"></ion-toggle>
-    </ion-item>    
-    
+      <ion-card-content>
+        <ion-button color="success" size="small" color="danger" (click)="deletePlant(plant)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+        <ion-button color="success" size="small" color="success" (click)="editPlant(plant)">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
   </div>
   <app-pag-eco></app-pag-eco>
 </ion-content>

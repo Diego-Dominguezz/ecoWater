@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { IsoDatePipe } from './pipes/iso-date.pipe';
 
 @NgModule({
   declarations: [AppComponent],

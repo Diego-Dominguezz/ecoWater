@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Asignacion de planta</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form action="" [formGroup]="form">
+    <ion-item>
+      <ion-label>Nombra tu planta:</ion-label>
+      <ion-input class="ion-text-right" formControlName="name" placeholder="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Tamaño de tu planta</ion-label>
+      <ion-select slot="end" formControlName="size" placeholder="Tamaño">
+        <ion-select-option value="small"> Chico </ion-select-option>
+        <ion-select-option value="medium"> Medio </ion-select-option>
+        <ion-select-option value="large"> Grande </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div formGroupName="waterSchedule">
+      <ion-item>
+      <ion-label id="date">Pick Hour</ion-label>
+      <ion-input formControlName="start" id="date" class="ion-text-end"></ion-input>
+      <ion-popover trigger="date" size="cover">
+        <ng-template>
+          <ion-datetime formControlName="start" presentation="time" [showDefaultButtons]="true"></ion-datetime>
+        </ng-template>
+      </ion-popover>
+      </ion-item>
+      <ion-item>
+        <ion-label id="date2">Pick end Hour</ion-label>
+        <ion-input formControlName="start" id="date2" class="ion-text-end"></ion-input>
+        <ion-popover trigger="date2" size="cover">
+          <ng-template>
+            <ion-datetime formControlName="end" presentation="time" [showDefaultButtons]="true"></ion-datetime>
+          </ng-template>
+        </ion-popover>
+      </ion-item>
+    </div>
+  </form>
+
+</ion-content>

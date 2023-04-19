@@ -27,6 +27,14 @@ export class PlantasService {
       console.log('encontre planta', x)
     }))
   }
+  putPLant(plant: Plant){
+    return this.http.put(this.getServer(`plants/`), plant).pipe(tap(x=>{
+      console.log('actualice planta', x)
+    }))
+  }
+  deletePlant(plant: Plant){
+    return this.http.delete(this.getServer(`plants/${plant.id}`));
+  }
 
   getServer(route: string){
     return 'http://localhost:3000/' + route;
